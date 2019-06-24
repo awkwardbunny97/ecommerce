@@ -31,6 +31,13 @@ def single_blog():
 def single_product():
     return render_template('single-product-details.html')
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
 # Products
 
 # @app.route('/dresswm')
