@@ -1,11 +1,13 @@
-from flask import Flask, render_template
-from mongo_db import get_all
+from flask import Flask, render_template,url_for,redirect,session,request
+from mongo_db import get_all,insert_account,list_account,get_all_account
 app = Flask(__name__)
-
+app.secret_key = "c4e"
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+  if 'Username' in session:
+    return render_template('index.html',data=get_all_account(),username=session['Username'])
+  return redirect(url_for('login'))
 
 @app.route('/contact')
 def contact():
@@ -35,9 +37,49 @@ def single_product():
 def login():
     return render_template('login.html')
 
+@app.route('/login', methods = ['POST'])
+def get_login():
+    check = False
+    username = request.form.get('username')
+    password = request.form.get('password')
+    data = get_all_account()
+    for k in data:
+        if username == k['Username'] and password == k['Password']:
+            check = True
+            break
+    if check:
+        session['Username'] = username
+        return redirect(url_for('index'))
+    else:
+        return render_template('login.html',login=check)
+
 @app.route('/register')
 def register():
     return render_template('register.html')
+
+@app.route('/register',methods=['POST'])
+def get_info():
+    username = request.form.get('username')
+    data = get_all_account()
+    users = []
+    for i in data:
+        users.append(i['Username'])
+    if username in users:
+        register = False
+        return render_template('register.html',register=register)  
+    else:
+        password = request.form.get('password')
+        name = request.form.get('name')
+        email = request.form.get('email')
+        insert_account(username,name,email,password)
+        session['Username'] = username
+        return redirect(url_for('index'))
+
+@app.route('/logout')
+def logout():
+    session.pop('Username')
+    return redirect(url_for('index'))
+
 # Products
 
 # @app.route('/dresswm')
