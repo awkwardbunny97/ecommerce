@@ -30,7 +30,7 @@
                                 <ul id="menu-content2" class="menu-content collapse show">
                                     <!-- Single Item -->
                                     <li data-toggle="collapse" data-target="#clothing">
-                                        <a href="#">clothing</a>
+                                        <a href="#">Woman's Corner</a>
                                         <ul class="sub-menu collapse show" id="clothing">
                                             <li><a href="/prod/bodysuitswm/bodysuits">Bodysuits</a></li>
                                             <li><a href="/prod/dresseswm/dresses">Dresses</a></li>
@@ -46,36 +46,24 @@
                                     </li>
                                     <!-- Single Item -->
                                     <li data-toggle="collapse" data-target="#shoes" class="collapsed">
-                                        <a href="#">shoes</a>
+                                        <a href="#">Man's Corner</a>
                                         <ul class="sub-menu collapse" id="shoes">
-                                            <li><a href="#">All</a></li>
-                                            <li><a href="#">Bodysuits</a></li>
-                                            <li><a href="#">Dresses</a></li>
-                                            <li><a href="#">Hoodies &amp; Sweats</a></li>
-                                            <li><a href="#">Jackets &amp; Coats</a></li>
-                                            <li><a href="#">Jeans</a></li>
-                                            <li><a href="#">Pants &amp; Leggings</a></li>
-                                            <li><a href="#">Rompers &amp; Jumpsuits</a></li>
-                                            <li><a href="#">Shirts &amp; Blouses</a></li>
-                                            <li><a href="#">Shirts</a></li>
-                                            <li><a href="#">Sweaters &amp; Knits</a></li>
+                                            <li><a href="/prod/tshirtsm/t-shirts">T-Shirts</a></li>
+                                            <li><a href="/prod/polom/polo">Polo</a></li>
+                                            <li><a href="/prod/shirtsm/shirts">Shirts</a></li>
+                                            <li><a href="/prod/jacketsm/jackets">Jackets</a></li>
+                                            <li><a href="/prod/trenchsm/trench">Trench</a></li>
                                         </ul>
                                     </li>
                                     <!-- Single Item -->
                                     <li data-toggle="collapse" data-target="#accessories" class="collapsed">
-                                        <a href="#">accessories</a>
+                                        <a href="#">Kid's Corner</a>
                                         <ul class="sub-menu collapse" id="accessories">
-                                            <li><a href="#">All</a></li>
-                                            <li><a href="#">Bodysuits</a></li>
-                                            <li><a href="#">Dresses</a></li>
-                                            <li><a href="#">Hoodies &amp; Sweats</a></li>
-                                            <li><a href="#">Jackets &amp; Coats</a></li>
-                                            <li><a href="#">Jeans</a></li>
-                                            <li><a href="#">Pants &amp; Leggings</a></li>
-                                            <li><a href="#">Rompers &amp; Jumpsuits</a></li>
-                                            <li><a href="#">Shirts &amp; Blouses</a></li>
-                                            <li><a href="#">Shirts</a></li>
-                                            <li><a href="#">Sweaters &amp; Knits</a></li>
+                                            <li><a href="/prod/dressesk/dresses">Dresses</a></li>
+                                            <li><a href="/prod/shirtsk/shirts">Shirts</a></li>
+                                            <li><a href="/prod/tshirtsk/t-shirts">T-shirts</a></li>
+                                            <li><a href="/prod/jacketsk/jackets">Jackets</a></li>
+                                            <li><a href="/prod/trenchk/trench">Trench</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -172,7 +160,7 @@
                                 <div class="single-product-wrapper">
                                     <!-- Product Image -->
                                     <div class="product-img">
-                                        <img src="http://127.0.0.1:8000/{{ i.product_img }}" alt="">
+                                        <img src="http://127.0.0.1:8000/static/{{ i.product_img }}" alt="">
                                         <!-- Product Badge -->
                                         <div class="product-badge offer-badge">
                                             <span>-30%</span>
@@ -186,7 +174,7 @@
                                     <!-- Product Description -->
                                     <div class="product-description">
                                         <span>topshop</span>
-                                        <a href="single-product-details.html">
+                                        <a href="/prod/dresseswm/dresses/{{ i.name }}">
                                             <h6>{{ i.name }}</h6>
                                         </a>
                                         <p class="product-price"><span class="old-price">$75.00</span> {{ i.price }}</p>

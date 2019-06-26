@@ -8,7 +8,7 @@
         <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     
         <!-- Title  -->
-        <title>Essence - Fashion Ecommerce Template</title>
+        <title>Essence - Fashion Ecommerce</title>
     
         <!-- Favicon  -->
         <link rel="icon" href="{{ url_for('static', filename='img/core-img/favicon.ico') }}">
@@ -25,7 +25,7 @@
             <!-- Classy Menu -->
             <nav class="classy-navbar" id="essenceNav">
                 <!-- Logo -->
-                <a class="nav-brand" href="/"><img src="http://127.0.0.1:8000/static/img/core-img/logo.png" alt=""></a>
+                <a class="nav-brand" href="/"><img src="{{ url_for('static', filename='img/core-img/logo.png') }}" alt=""></a>
                 <!-- Navbar Toggler -->
                 <div class="classy-navbar-toggler">
                     <span class="navbarToggler"><span></span><span></span><span></span></span>
@@ -66,24 +66,21 @@
                                         <li><a href="/prod/trenchk/trench">Trench</a></li>
                                     </ul>
                                     <div class="single-mega cn-col-4">
-                                        <img src="http://127.0.0.1:8000/static/img/bg-img/bg-6.jpg" alt="">
+                                        <img src="{{ url_for('static', filename='img/bg-img/bg-6.jpg') }}" alt="">
                                     </div>
                                 </div>
                             </li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="/">Home</a></li>
-                                    <li><a href="shop">Shop</a></li>
-                                    <li><a href="single-product-details">Product Details</a></li>
-                                    <li><a href="checkout">Checkout</a></li>
-                                    <li><a href="blog">Blog</a></li>
-                                    <li><a href="single-blog">Single Blog</a></li>
-                                    <li><a href="regular-page">Regular Page</a></li>
-                                    <li><a href="contact">Contact</a></li>
+                                    <li><a href="{{ url_for('checkout') }}">Checkout</a></li>
+                                    <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                                    <li><a href="{{ url_for('single_blog') }}">Single Blog</a></li>
+                                    <li><a href="{{ url_for('regular_page') }}">Regular Page</a></li>
                                 </ul>
                             </li>
-                            <li><a href="blog">Blog</a></li>
-                            <li><a href="contact">Contact</a></li>
+                            <li><a href="{{ url_for('blog') }}">Blog</a></li>
+                            <li><a href="{{ url_for('contact') }}">Contact</a></li>
                         </ul>
                     </div>
                     <!-- Nav End -->
@@ -101,19 +98,15 @@
                 </div>
                 <!-- Favourite Area -->
                 <div class="favourite-area">
-                    <a href="#"><img src="http://127.0.0.1:8000/static/img/core-img/heart.svg" alt=""></a>
+                    <a href="#"><img src="{{ url_for('static', filename='img/core-img/heart.svg') }}" alt=""></a>
                 </div>
                 <!-- User Login Info -->
                 <div class="user-login-info">
-<<<<<<< HEAD
-                    <a href="logout"><img src="http://127.0.0.1:8000/static/img/core-img/user.svg" alt="">{{username}}</a>
-=======
-                    <a href="logout"><img src="static/img/core-img/user.svg" alt="">{{username}}</a>
->>>>>>> 5bf850714ba059f0036189c36fe01e71edd3cd79
+                    <a href="logout"><img src="{{ url_for('static', filename='img/core-img/user.svg') }}" alt="">{{username}}</a>
                 </div>
                 <!-- Cart Area -->
                 <div class="cart-area">
-                    <a href="#" id="essenceCartBtn"><img src="http://127.0.0.1:8000/static/img/core-img/bag.svg" alt=""> <span>3</span></a>
+                    <a href="#" id="essenceCartBtn"><img src="{{ url_for('static', filename='img/core-img/bag.svg') }}" alt=""> <span>3</span></a>
                 </div>
             </div>
 
@@ -128,7 +121,7 @@
 
         <!-- Cart Button -->
         <div class="cart-button">
-            <a href="#" id="rightSideCart"><img src="static/img/core-img/bag.svg" alt=""> <span>3</span></a>
+            <a href="#" id="rightSideCart"><img src="{{ url_for('static', filename='img/core-img/bag.svg') }}" alt=""> <span>3</span></a>
         </div>
 
         <div class="cart-content d-flex">
@@ -137,8 +130,8 @@
             <div class="cart-list">
                 <!-- Single Cart Item -->
                 <div class="single-cart-item">
-                    <a href="#" class="product-image">
-                        <img src="static/img/product-img/product-1.jpg" class="cart-thumb" alt="">
+                    <a href="#" class="product-image">{{ url_for('static', filename='') }}
+                        <img src="{{ url_for('static', filename='img/product-img/product-1.jpg') }}" class="cart-thumb" alt="">
                         <!-- Cart Item Desc -->
                         <div class="cart-item-desc">
                           <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
@@ -154,7 +147,7 @@
                 <!-- Single Cart Item -->
                 <div class="single-cart-item">
                     <a href="#" class="product-image">
-                        <img src="static/img/product-img/product-2.jpg" class="cart-thumb" alt="">
+                        <img src="{{ url_for('static', filename='img/product-img/product-2.jpg') }}" class="cart-thumb" alt="">
                         <!-- Cart Item Desc -->
                         <div class="cart-item-desc">
                           <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
@@ -170,7 +163,7 @@
                 <!-- Single Cart Item -->
                 <div class="single-cart-item">
                     <a href="#" class="product-image">
-                        <img src="static/img/product-img/product-3.jpg" class="cart-thumb" alt="">
+                        <img src="{{ url_for('static', filename='img/product-img/product-3.jpg') }}" class="cart-thumb" alt="">
                         <!-- Cart Item Desc -->
                         <div class="cart-item-desc">
                           <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>

@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 from flask import Flask, render_template,url_for,redirect,session,request,jsonify
 from mongo_db import insert_account,list_account,get_all_account,get_product_by_Id
-=======
-from flask import Flask, render_template,url_for,redirect,session,request
-from mongo_db import get_all,insert_account,list_account,get_all_account
->>>>>>> 5bf850714ba059f0036189c36fe01e71edd3cd79
 app = Flask(__name__)
 app.secret_key = "c4e"
 
@@ -85,21 +80,15 @@ def logout():
     session.pop('Username')
     return redirect(url_for('index'))
 
-# Products
-
-# @app.route('/get_category_by_Id/{id}')
-# def dressm():
-#     return render_template('shop.html', data=get_all(), id = id)
-
-# @app.route('/category/{category_id}')
-# def products():
-#   id = get_category_by_Id(category_id)
-#   return render_template('test.html', data = id)
-
 @app.route('/prod/<category>/<title>')
 def prod(category, title):
     data = get_product_by_Id(category)
     return render_template('shop.html', product = data, title = title)
+
+@app.route('/prod/<category>/<title>/<name>')
+def details(category, title,name):
+    data = get_product_by_Id(category)
+    return render_template('single-product-details.html', product = data, title = title, name = name)
 
 if __name__ == '__main__':
   app.run(host='127.0.0.1', port=8000, debug=True)
