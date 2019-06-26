@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 from flask import Flask, render_template,url_for,redirect,session,request,jsonify
 from mongo_db import insert_account,list_account,get_all_account,get_product_by_Id
+=======
+from flask import Flask, render_template,url_for,redirect,session,request
+from mongo_db import get_all,insert_account,list_account,get_all_account
+>>>>>>> 5bf850714ba059f0036189c36fe01e71edd3cd79
 app = Flask(__name__)
 app.secret_key = "c4e"
 
